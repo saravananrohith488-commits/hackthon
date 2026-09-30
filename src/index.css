@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0A0B0A;
+  --panel-base: #131513;
+  --panel-elevated: #191B18;
+  --panel-inset: #1E211D;
+  --border-subtle: #23261F;
+  --border-strong: #31352C;
+  --text-primary: #EEF0EA;
+  --text-secondary: #9BA096;
+  --text-muted: #62675C;
+  --accent-jade: #34D399;
+  --accent-dim: #0E2019;
+  --accent-border: #0F3D2E;
+  --risk-red: #F0554A;
+  --risk-dim: #211110;
+  --risk-border: #3D1815;
+  --warning-amber: #F0AA3D;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom subtle scrollbar for SOC dashboard */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0B0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #23261F;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #31352C;
+}
+
+/* Standard flat SOC Panel styling */
+.soc-panel {
+  background-color: var(--panel-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.soc-panel-elevated {
+  background-color: var(--panel-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.soc-panel-inset {
+  background-color: var(--panel-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+/* Table row hover */
+.soc-table-row {
+  transition: background-color 0.15s ease;
+}
+.soc-table-row:hover {
+  background-color: var(--panel-elevated);
+}
+
+/* Badge styles */
+.badge-jade {
+  background-color: var(--accent-dim);
+  color: var(--accent-jade);
+  border: 1px solid var(--accent-border);
+  border-radius: 9999px;
+}
+
+.badge-risk {
+  background-color: var(--risk-dim);
+  color: var(--risk-red);
+  border: 1px solid var(--risk-border);
+  border-radius: 9999px;
+}
+
+.badge-warning {
+  background-color: var(--warning-dim, #261F12);
+  color: var(--warning-amber);
+  border: 1px solid var(--warning-border, #453316);
+  border-radius: 9999px;
+}
